@@ -189,6 +189,9 @@
   .flex {
     display: flex;
   }
+  .hidden {
+    display: none;
+  }
   .table {
     display: table;
   }
@@ -233,6 +236,9 @@
   }
   .justify-around {
     justify-content: space-around;
+  }
+  .justify-between {
+    justify-content: space-between;
   }
   .space-y-4 {
     :where(& > :not(:last-child)) {
@@ -351,6 +357,21 @@
     --tw-duration: 1000ms;
     transition-duration: 1000ms;
   }
+  .md\:block {
+    @media (width >= 48rem) {
+      display: block;
+    }
+  }
+  .md\:flex-1\/2 {
+    @media (width >= 48rem) {
+      flex: calc(1/2 * 100%);
+    }
+  }
+  .md\:justify-around {
+    @media (width >= 48rem) {
+      justify-content: space-around;
+    }
+  }
   .md\:px-48 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 48);
@@ -359,6 +380,12 @@
   .md\:px-64 {
     @media (width >= 48rem) {
       padding-inline: calc(var(--spacing) * 64);
+    }
+  }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
     }
   }
   .dark\:bg-black {
