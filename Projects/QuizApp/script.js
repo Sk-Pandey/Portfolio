@@ -3,7 +3,7 @@ const questions = [
     {
         question: "If 1st January is Sunday, what day will be on 1st March (non-leap year)?",
         answers: [
-            { option: "Wednesday", correct: true },  // ✅ fixed
+            { option: "Wednesday", correct: true },  // 
             { option: "Thursday", correct: false },
             { option: "Tuesday", correct: false },
             { option: "Friday", correct: false }
@@ -68,7 +68,7 @@ const questions = [
         answers: [
             { option: "Friday", correct: false },
             { option: "Sunday", correct: false },
-            { option: "Saturday", correct: true },  // ✅ fixed
+            { option: "Saturday", correct: true },  // 
             { option: "Monday", correct: false }
         ]
     },
