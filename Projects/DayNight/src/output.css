@@ -194,6 +194,9 @@
   .w-\[28px\] {
     width: 28px;
   }
+  .cursor-pointer {
+    cursor: pointer;
+  }
   .items-center {
     align-items: center;
   }
