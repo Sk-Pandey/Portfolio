@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" id="html" class="dark">
+<html lang="en" id="html" class="">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
             <a href="https://sk-pandey.github.io/Portfolio/"><li class="cursor-pointer font-semibold hidden md:block">Home</li></a>
             <a href="https://sk-pandey.github.io/Portfolio/Projects/index.html"><li class="cursor-pointer font-semibold hidden md:block">Projects</li></a>  
             <li class="cursor-pointer  font-semibold hidden md:block">About</li>
-            <li class="cursor-pointer"><img id="mode" class="w-[28px] h-[28px] " src="https://img.icons8.com/?size=100&id=H3yHeysB1dxv&format=png&color=000000" alt=""></li>
+            <li id="mode" class="cursor-pointer dark:bg-white bg-slate-400   w-[4rem] rounded-2xl py-1 relative h-[35px]"><img id="mode_img" class="w-[28px] h-[28px] absolute left-0 dark:left-auto dark:right-0" src="https://img.icons8.com/?size=100&id=11404&format=png&color=000000" alt=""></li>
         </ul>
     </header>
     <!-- MAIN START HERE -->
@@ -39,13 +39,14 @@
     <script>
         const html =document.getElementById("html");
         const mode =document.getElementById("mode");
+        const mode_img =document.getElementById("mode_img");
         
         mode.addEventListener("click",()=>{
             html.classList.toggle("dark");
             if(html.classList.contains("dark")){
-                mode.src="https://img.icons8.com/?size=100&id=H3yHeysB1dxv&format=png&color=000000"
+                mode_img.src="https://img.icons8.com/?size=100&id=H3yHeysB1dxv&format=png&color=000000"
             }else{
-                mode.src="https://img.icons8.com/?size=100&id=TfiSRg8L5qBB&format=png&color=000000"
+                mode_img.src="https://img.icons8.com/?size=100&id=11404&format=png&color=000000"
             }
         })
 
