@@ -1,0 +1,7 @@
+@import "tailwindcss";
+.opt{
+    @apply flex gap-3  items-center  p-3 pl-4 cursor-pointer hover:bg-white; 
+}
+.opt img{
+    @apply w-[2rem];
+}

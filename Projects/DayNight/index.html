@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" id="html" class="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day/Night</title>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="transition-all duration-500 bg-green-500  dark:bg-gray-800 text-black dark:text-white">
+    <header class="bg-white dark:bg-slate-900 p-4 flex items-center justify-between shadow-lg sticky top-0">
+        <h1 class="lg:text-3xl font-bold">Shashikant Pandey</h1>
+        <ul class="flex md:flex-1/2 justify-around mt-2">
+            <a href="https://sk-pandey.github.io/Portfolio/"><li class="cursor-pointer font-semibold hidden md:block">Home</li></a>
+            <a href="https://sk-pandey.github.io/Portfolio/Projects/index.html"><li class="cursor-pointer font-semibold hidden md:block">Projects</li></a>  
+            <li class="cursor-pointer  font-semibold hidden md:block">About</li>
+            <li id="mode" class="cursor-pointer dark:bg-white bg-slate-400   w-[4rem] rounded-2xl py-1 relative h-[35px]"><img id="mode_img" class="w-[28px] h-[28px] absolute left-0 dark:left-auto dark:right-0" src="https://img.icons8.com/?size=100&id=11404&format=png&color=000000" alt=""></li>
+        </ul>
+    </header>
+    <!-- MAIN START HERE -->
+
+    <main class="p-12 lg:px-64 space-y-12">
+        <section class="dark:bg-slate-900 bg-slate-300  shadow-lg p-8 rounded-lg space-y-4 ">
+            <h1 class="text-2xl font-bold ">The Joy of Reading</h1>
+            <p class="font-[500] text-justify ">Reading is a wonderful activity that opens up whole new worlds. It's not just about decoding words on a page; it's about escaping into thrilling adventures, learning fascinating facts, and understanding different perspectives. Whether you prefer fantasy novels, gripping mysteries, historical accounts, or practical self-help books, there's something out there for everyone. Reading can be a quiet, solitary pleasure, a way to relax after a long day, or a tool for personal growth. It improves vocabulary, enhances critical thinking, and can even reduce stress. So, grab a book, find a cozy spot, and let your imagination soar. The more you read, the more you learn, and the more you grow. It's an accessible and enriching hobby that can bring immense joy throughout your life.</p>
+        </section>
+        <section class="dark:bg-slate-900 bg-slate-300  shadow-lg p-8 rounded-lg space-y-4 ">
+            <h1 class="text-2xl font-bold ">The Benefits of Walking</h1>
+            <p class="font-[500] text-justify ">Walking is one of the simplest yet most effective forms of exercise. It requires no special equipment, can be done almost anywhere, and offers a wide range of health benefits. Regular walks can improve cardiovascular health, strengthen muscles and bones, and help manage weight. Beyond the physical advantages, walking is also fantastic for mental well-being. It can reduce stress, boost mood, and clear your head. A brisk walk in nature, like a park or along a quiet street, can be particularly invigorating. Even a short 30-minute walk a few times a week can make a significant difference. It's a low-impact activity suitable for most ages and fitness levels, making it an excellent way to stay active and healthy.</p>
+        </section>
+        <section class="dark:bg-slate-900 bg-slate-300  shadow-lg p-8 rounded-lg space-y-4 ">
+            <h1 class="text-2xl font-bold ">The Importance of Sleep</h1>
+            <p class="font-[500] text-justify ">Sleep is far more than just a period of rest; it's a crucial biological process essential for our physical and mental health. While we sleep, our bodies repair themselves, our brains consolidate memories, and our immune systems strengthen. Getting enough quality sleep directly impacts our mood, energy levels, and cognitive function the next day. Lack of sleep can lead to irritability, difficulty concentrating, and increased susceptibility to illness. Establishing a regular sleep schedule, creating a comfortable sleep environment, and avoiding screens before bed are all good practices. Prioritizing sleep is not a luxury, but a necessity for overall well-being. It helps us perform better, think more clearly, and generally feel more vibrant.</p>
+        </section>
+    </main>
+
+    <!-- MAIN END HERE -->
+    
+
+    <script>
+        const html =document.getElementById("html");
+        const mode =document.getElementById("mode");
+        const mode_img =document.getElementById("mode_img");
+        
+        mode.addEventListener("click",()=>{
+            html.classList.toggle("dark");
+            if(html.classList.contains("dark")){
+                mode_img.src="https://img.icons8.com/?size=100&id=H3yHeysB1dxv&format=png&color=000000"
+            }else{
+                mode_img.src="https://img.icons8.com/?size=100&id=11404&format=png&color=000000"
+            }
+        })
+
+
+
+    </script>
+</body>
+</html>
