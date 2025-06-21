@@ -1617,25 +1617,17 @@
     }
   }
 }
-.error {
-  border-color: red;
-  animation: shake 0.1s linear 10;
+.popUp {
+  animation: pop 5s ease 1 forwards;
 }
-@keyframes shake {
+@keyframes pop {
   0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-2px);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  75% {
-    transform: translateX(2px);
+    transform: scale(0);
+    transform: translateY(-150px);
   }
   100% {
-    transform: translateX(0);
+    transform: scale(1);
+    transform: translateY(0px);
   }
 }
 @property --tw-translate-x {
