@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text To Speech</title>
+    <script src="https://kit.fontawesome.com/e4859e641f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="h-screen bg-gradient-to-tr from-pink-800 to-violet-900 grid place-items-center">
+    
+    <div id="container" class="w-[300px] md:w-[580px]">
+        <h1 class="text-2xl sm:text-4xl text-white mb-8">Text To Speech <span class="text-[#fb0536]">Converter</span></h1>
+        <textarea id="text" placeholder="Write anything here..." class="w-full h-[300px] p-4 rounded-lg  bg-[#403d84] opacity-80  text-[#fff] border-0 outline-0 resize-none"></textarea>
+        <div class="mt-4 flex justify-between gap-4">
+        <select  id="select" class="bg-[#403d84] w-full h-[2rem] rounded-xl text-white cursor-pointer">
+            
+        </select>
+        <button class="bg-[#e35470] text-white px-4 rounded-lg flex items-center justify-cente gap-2 cursor-pointer"> <i class="mt-0.5 fa-solid fa-play"></i>Listen</button>
+        </div>
+        
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
