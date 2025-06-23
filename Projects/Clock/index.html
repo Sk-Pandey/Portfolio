@@ -3,46 +3,56 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Animated Digital Clock</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      @keyframes glow {
-        0%,
-        100% {
-          text-shadow: 0 0 10px #00f7ff, 0 0 20px #00f7ff, 0 0 30px #00f7ff;
-        }
-        50% {
-          text-shadow: 0 0 20px #00f7ff, 0 0 30px #00f7ff, 0 0 40px #00f7ff;
-        }
-      }
-      .glow {
-        animation: glow 2s ease-in-out infinite;
-      }
-      .transition-bg {
-        transition: background-color 0.5s ease, color 0.5s ease;
-      }
-    </style>
+    <title>Clock</title>
+    <link rel="stylesheet" href="src/output.css" />
   </head>
-  <body
-    class="flex items-center justify-center min-h-screen bg-gray-900 text-white transition-bg"
-    id="body"
-  >
-    <div class="text-center">
-      <h1 class="text-3xl md:text-5xl font-bold mb-6">Digital Clock</h1>
-      <div
-        id="clock"
-        class="text-6xl md:text-8xl font-mono bg-gray-800 px-8 py-4 rounded-xl shadow-2xl glow"
-      >
-        
+  <body class="h-screen bg-gradient-to-r
+from-[#0f172a]
+to-[#334155] grid place-items-center">
+    <div id="clock" class="bg-gray-800 flex gap-4 p-8 text-white rounded-lg shadow-[0px_0px_10px_3px_crimson]">
+      <div class="flex flex-col items-center">
+        <h1 class="text-5xl text-shadow-[0px_0px_5px_blue,0px_0px_10px_lightblue]" id="hour">00</h1>
+        <span class="text-shadow-[0px_0px_5px_red]">HOURS</span>
       </div>
-      <button
-        id="toggle"
-        class="bg-gray-700 text-white px-6 py-2 rounded-full mt-6 hover:bg-gray-600 font-semibold"
-      >
-        Dark/Light
-      </button>
+      <span class="text-5xl">:</span>
+      <div class="flex flex-col items-center">
+        <h1 class="text-5xl text-shadow-[0px_0px_5px_blue,0px_0px_10px_lightblue]" id="minute">00</h1>
+        <span class="text-shadow-[0px_0px_5px_red]">MINS</span>
+      </div>
+      <span class="text-5xl">:</span>
+      <div class="flex flex-col items-center">
+        <h1 class="text-5xl text-shadow-[0px_0px_5px_blue,0px_0px_10px_lightblue]" id="second">00</h1>
+        <span class="text-shadow-[0px_0px_5px_red]">SEC</span>
+      </div>
     </div>
- 
-    <script src="script.js"></script>
+
+    <script>
+      let hour = document.getElementById("hour");
+      let minute = document.getElementById("minute");
+      let second = document.getElementById("second");
+
+      function time() {
+        let date = new Date();
+        if (date.getHours() < 10) {
+          hour.innerText = "0" + date.getHours();
+        } else {
+          hour.innerText = date.getHours();
+        }
+
+        if (date.getMinutes() < 10) {
+          minute.innerText = "0" + date.getMinutes();
+        } else {
+          minute.innerText = date.getMinutes();
+        }
+
+        if (date.getSeconds() < 10) {
+          second.innerText = "0" + date.getSeconds();
+        } else {
+          second.innerText = date.getSeconds();
+        }
+      }
+
+      setInterval(time, 1000);
+    </script>
   </body>
 </html>
