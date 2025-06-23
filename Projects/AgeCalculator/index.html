@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <style>
+      *{
+        text-transform: capitalize;
+        font-variant: small-caps;
+      }
+      span{
+        color: yellow;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body
+    class="h-screen bg-gradient-to-r from-blue-500 to-purple-500 grid place-items-center"
+  >
+    <div id="container">
+      <h1 class="text-4xl sm:text-5xl text-yellow-300 font-bold">
+        Age Calculator
+      </h1>
+
+      <div id="main" class="my-8 bg-white/40 p-4 rounded-lg space-x-4">
+        <input
+          class="bg-white p-2 rounded-lg cursor-pointer outline-none border-none selection:bg-transparent"
+          type="date"
+          id="date"
+        />
+        <button
+          onclick="CalculateAge()"
+          class="bg-yellow-300 px-4 py-2 rounded-lg cursor-pointer"
+        >
+          Calculate
+        </button>
+      </div>
+      <p id="age" class="text-white"></p>
+    </div>
+
+    <script>
+      let dateInput = document.getElementById("date");
+
+      dateInput.addEventListener("click", function () {
+        this.showPicker && this.showPicker(); // opens native calendar
+      });
+      dateInput.max = new Date().toISOString().split("T")[0];
+
+      function CalculateAge() {
+        let birthdate = new Date(dateInput.value);
+
+        let d1 = birthdate.getDate();
+        let m1 = birthdate.getMonth() + 1;
+        let y1 = birthdate.getFullYear();
+
+        let today = new Date();
+
+        let d2 = today.getDate();
+        let m2 = today.getMonth() + 1;
+        let y2 = today.getFullYear();
+
+        //  difference
+        let d3, m3, y3;
+        y3 = y2 - y1;
+        if (m2>=m1){
+          m3 = m2 -m1;
+        }else{
+          y3--;
+          m3 = 12+m2-m1;
+        }
+        if(d2>=d1){
+          d3=d2-d1;
+
+        }else{
+          m3--;
+          d3=getDaysInMonth(y1,m1)+d2-d1;
+        }
+        if(m3<0){
+          m3=11;
+          y3--;
+        }
+        document.getElementById("age").innerHTML=`You Are <span>${y3}</span> year <span>${m3}</span> months and <span>${d3}</span> days old`;
+
+      }
+        function getDaysInMonth(year,month){
+          return new Date(year,month,0).getDate()
+        }
+
+      
+    </script>
+  </body>
+</html>
