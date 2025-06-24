@@ -3,58 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clock with Glassmorphism</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-      /* For extra glassmorphism if needed */
-      .glass {
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-      }
-    </style>
+    <title>Clock</title>
+    <link rel="stylesheet" href="src/output.css" />
   </head>
-  <body
-    class="h-screen bg-[url('https://img.freepik.com/premium-vector/lone-tree_645480-1595.jpg?ga=GA1.1.1060571533.1748167966&semt=ais_hybrid&w=740')] bg-cover bg-center grid place-items-center"
-  >
-    <div
-      id="clock"
-      class="glass flex gap-4 p-8 text-white rounded-xl shadow-xl"
-    >
+  <body class="h-screen bg-gradient-to-r
+from-[#0f172a]
+to-[#334155] grid place-items-center">
+    <div id="clock" class="bg-gray-800 flex gap-4 p-8 text-white rounded-lg shadow-[0px_0px_10px_3px_crimson]">
       <div class="flex flex-col items-center">
-        <h1
-          class="text-5xl drop-shadow-[0_0_5px_blue]"
-          id="hour"
-        >
-          00
-        </h1>
-        <span class="drop-shadow-[0_0_5px_red]">HOURS</span>
+        <h1 class="text-5xl text-shadow-[0px_0px_25px_blue]" id="hour">00</h1>
+        <span class="text-shadow-[0px_0px_5px_red]">HOURS</span>
       </div>
       <span class="text-5xl">:</span>
       <div class="flex flex-col items-center">
-        <h1
-          class="text-5xl drop-shadow-[0_0_5px_blue]"
-          id="minute"
-        >
-          00
-        </h1>
-        <span class="drop-shadow-[0_0_5px_red]">MINS</span>
+        <h1 class="text-5xl text-shadow-[0px_0px_25px_blue]" id="minute">00</h1>
+        <span class="text-shadow-[0px_0px_5px_red]">MINS</span>
       </div>
       <span class="text-5xl">:</span>
       <div class="flex flex-col items-center">
-        <h1
-          class="text-5xl drop-shadow-[0_0_5px_blue]"
-          id="second"
-        >
-          00
-        </h1>
-        <span class="drop-shadow-[0_0_5px_red]">SEC</span>
+        <h1 class="text-5xl text-shadow-[0px_0px_25px_blue]" id="second">00</h1>
+        <span class="text-shadow-[0px_0px_5px_red]">SEC</span>
       </div>
     </div>
 
     <script>
-      let hour = document.getElementById("hour");
+       let hour = document.getElementById("hour");
       let minute = document.getElementById("minute");
       let second = document.getElementById("second");
 
@@ -64,6 +37,7 @@
         minute.innerText = date.getMinutes().toString().padStart(2, "0");
         second.innerText = date.getSeconds().toString().padStart(2, "0");
       }
+
 
       setInterval(time, 1000);
     </script>
