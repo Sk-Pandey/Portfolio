@@ -473,6 +473,9 @@
   .w-3\/5 {
     width: calc(3/5 * 100%);
   }
+  .w-5 {
+    width: calc(var(--spacing) * 5);
+  }
   .w-10 {
     width: calc(var(--spacing) * 10);
   }
@@ -1687,6 +1690,16 @@
   .md\:h-\[360px\] {
     @media (width >= 48rem) {
       height: 360px;
+    }
+  }
+  .md\:w-6 {
+    @media (width >= 48rem) {
+      width: calc(var(--spacing) * 6);
+    }
+  }
+  .md\:w-\[24px\] {
+    @media (width >= 48rem) {
+      width: 24px;
     }
   }
   .md\:w-\[360px\] {
