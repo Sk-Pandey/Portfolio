@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link rel="stylesheet" href="src/output.css"">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+*{
+   font-family: "Playfair Display", serif;
+   font-weight: 600; 
+}
+h1::after{
+    content: "";
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background-color:rgb(23,124,229);
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    transform: translateX(-50%);
+ 
+}
+p::before,p::after{
+    content: '"';
+}
+span::before{
+    content: "";
+   width: 20px;
+   height: 2px;
+   background-color: rgb(23,124,229);
+   position: absolute;
+   top: 50%;
+   left: -25px;
+}  
+button{
+    font-weight:100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgb(23,124,229);
+    cursor: pointer;
+}
+button:nth-child(2){
+    background-color: transparent;
+    color: #333;
+}
+</style>
+</head>
+<body class="bg-blue-200 h-screen grid place-items-center">
+
+    <div id="container" class="bg-white p-4 sm:p-8 rounded-lg w-[300px] md:w-[480px]">
+        <h1 class="text-3xl text-center mb-8 relative">Quote of the day</h1>
+        <p id="quote" class="text-center">Loading......</p>
+        <span id="author" class="block mt-2.5 relative float-right">loading....</span>
+
+        <div id="buttons" class="w-full mt-12 flex justify-center gap-4">
+            <button onclick="getQuote(api_url)" class="bg-[rgb(23,124,229)] px-4 py-2 text-white rounded-full">New Quote</button>
+            <button onclick="tweet()" class="bg-[rgb(23,124,229)] px-4 py-2 text-white rounded-full"><img class="w-[28px] mr-1"  src="https://img.icons8.com/?size=100&id=13963&format=png&color=000000" alt="">Tweet</button>
+        </div>
+
+    </div>
+
+    <script>
+        let quote = document.getElementById("quote");
+        let author = document.getElementById("author");
+
+        const api_url ="https://dummyjson.com/quotes/random";
+
+        async function getQuote(url) {
+            const response = await fetch(url);
+            var data =await response.json();
+            quote.innerText = data.quote;
+            author.innerText = data.author;
+
+        }
+
+        getQuote(api_url);
+
+        const newBtn = document.getElementById("new");
+        const tweetBtn = document.getElementById("tweet");
+
+        
+        function tweet(){
+            window.open("https://twitter.com/intent/tweet?text="+quote.innerHTML + " --- by "+author.innerHTML,"Tweet Window","width=600,height=300")
+        }
+
+
+    </script>
+
+</body>
+</html>
