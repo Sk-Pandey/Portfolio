@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Awesome Form</title>
+  <link rel="stylesheet" href="src/output.css" />
+  <style>
+    .move-button {
+      position: absolute;
+    }
+  </style>
+</head>
+<body class="h-screen grid place-items-center relative overflow-hidden">
+
+  <form action="#" class="flex flex-col gap-4 relative" id="form">
+    <div class="flex flex-col">
+      <span class="font-bold text-gray-800">Email:</span>
+      <input class="border border-gray-600 rounded-md px-2 py-1" id="email" type="email" />
+    </div>
+    <div class="flex flex-col">
+      <span class="font-bold text-gray-800">Password:</span>
+      <input class="border border-gray-600 rounded-md px-2 py-1" type="password" id="password" />
+    </div>
+
+    <button
+      id="submitBtn"
+      class="bg-[#093FB4] text-white py-2 px-6 rounded-lg cursor-pointer move-button"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+
+  <script>
+    const btn = document.getElementById("submitBtn");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const form = document.getElementById("form");
+
+    const originalTop = 180;
+    const originalLeft = 0;
+
+    btn.style.top = originalTop + "px";
+    btn.style.left = originalLeft + "px";
+
+    btn.addEventListener("mouseover", () => {
+      if (email.value.trim() === "" || password.value.trim() === "") {
+        const newX = Math.floor(Math.random() * 300 - 150); // -150 to +150 px
+        const newY = Math.floor(Math.random() * 150 - 75); // -75 to +75 px
+        btn.style.transform = `translate(${newX}px, ${newY}px)`;
+        btn.style.backgroundColor="red";
+        btn.innerText="Fill Detail";
+      } else {
+        btn.style.transform = "translate(0, 0)";
+        btn.style.backgroundColor="Blue";
+        btn.innerText="Submit";
+      }
+    });
+
+    form.addEventListener("submit", (e) => {
+      if (email.value.trim() === "" || password.value.trim() === "") {
+        e.preventDefault(); // prevent form submission
+        alert("Please fill all the fields first!");
+      }
+    });
+    if(email.value.trim() !== "" && password.value.trim() !== ""){
+      btn.style.transform = "translate(0, 0)";
+    }
+    function checkInputs() {
+    if (email.value.trim() !== "" && password.value.trim() !== "") {
+      btn.style.transform = "translate(0, 0)";
+      btn.style.backgroundColor="Blue";
+        btn.innerText="Submit";
+    }
+  }
+
+  email.addEventListener("input", checkInputs);
+  password.addEventListener("input", checkInputs);
+  </script>
+</body>
+</html>
