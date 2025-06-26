@@ -99,6 +99,9 @@
         let Equal = document.getElementById("equal");
 
         Equal.addEventListener("click",()=>{
+            if(["%","/","*","-","+","."].includes((result.innerText).slice(-1))){
+                result.innerText=result.innerText.slice(0,-1);
+            }
             result.innerText=eval(result.innerText);
         })
     </script>
