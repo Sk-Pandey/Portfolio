@@ -925,6 +925,9 @@
   .bg-slate-400 {
     background-color: var(--color-slate-400);
   }
+  .bg-slate-500 {
+    background-color: var(--color-slate-500);
+  }
   .bg-slate-700 {
     background-color: var(--color-slate-700);
   }
