@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="h-screen grid place-items-center bg-gradient-to-r from-[#0f172a]  to-[#334155]">
+    
+    <section class="bg-gradient-to-b from-[#db2777] via-[#ef4444] to-[#f97316] p-4 w-[330px] rounded-lg">
+
+        <div id="result" class="bg-white p-4 rounded-lg text-3xl text-end font-semibold">0</div>
+        <div id="buttons" class="mt-4 w-full pl-4 space-y-4">
+            <div class="w-full grid grid-cols-4 ">
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black AC">AC</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black DEL">DEL</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black op">%</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black op">/</button>
+            </div>
+            <div class="w-full grid grid-cols-4 ">
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">7</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">8</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">9</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black op">*</button>
+            </div>
+            <div class="w-full grid grid-cols-4 ">
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">4</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">5</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">6</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black op">-</button>
+            </div>
+            <div class="w-full grid grid-cols-4 ">
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">1</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">2</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">3</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black op">+</button>
+            </div>
+            <div class="w-full grid grid-cols-4 ">
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black digit">0</button>
+                <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black op">.</button>
+                <button class="col-span-2 bg-white text-5xl flex justify-center rounded-lg mr-3 cursor-pointer shadow-lg shadow-black" id="equal"> = </button>
+                
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        let result = document.getElementById("result");
+        let oprators = document.querySelectorAll(".op");
+        let digit = document.querySelectorAll(".digit");
+        let Button = document.querySelectorAll(".btn");
+
+        //disabling each oprator initially
+        let op = Array.from(oprators);
+        op.forEach(opr => {
+                            opr.disabled = true;                        
+                    });
+
+
+        let btns = Array.from(Button);
+        btns.forEach(btn => {
+            btn.addEventListener("click",(e)=>{
+                if(result.innerText=="0"){
+                    op.forEach(opr => {
+                            opr.disabled = true;                        
+                    });
+                    result.innerText="";
+                }
+                if(["%","/","*","-","+","."].includes(e.target.innerText)){
+                    result.innerText=result.innerHTML+e.target.innerText;
+                    op.forEach(opr => {
+                            opr.disabled = true;                        
+                    });
+                }else if(e.target.innerText=="AC"){
+                    result.innerText="0";
+                    op.forEach(opr => {
+                            opr.disabled = true;                        
+                    });
+                }
+                else if(e.target.innerText=="DEL"){
+                    result.innerText=result.innerText.slice(0,-1);
+                    if(result.innerText==""){
+                        result.innerText="0";
+                    }
+                }
+                else{
+                    result.innerText=result.innerHTML+e.target.innerText;
+                    op.forEach(opr => {
+                            opr.disabled = false;                        
+                    });
+                }
+                
+            })
+        });
+
+
+        let Equal = document.getElementById("equal");
+
+        Equal.addEventListener("click",()=>{
+            result.innerText=eval(result.innerText);
+        })
+    </script>
+
+</body>
+</html>
