@@ -10,7 +10,7 @@
     
     <section class="bg-gradient-to-b from-[#db2777] via-[#ef4444] to-[#f97316] p-4 w-[330px] rounded-lg">
 
-        <div id="result" class="bg-white p-4 rounded-lg text-3xl text-end font-semibold overflow-hidden">0</div>
+        <div id="result" class="bg-white p-4 rounded-lg text-3xl text-end font-semibold over">0</div>
         <div id="buttons" class="mt-4 w-full pl-4 space-y-4">
             <div class="w-full grid grid-cols-4 ">
                 <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black AC">AC</button>
@@ -111,31 +111,6 @@
 
 
 
-        //For Keybaord support
-        document.addEventListener("keydown", (e) => {
-    let key = e.key;
-
-    if (!isNaN(key) || "+-*/%.".includes(key)) {
-        if (result.innerText === "0") result.innerText = "";
-        result.innerText += key;
-
-        // Disable operators after pressing one
-        op.forEach(opr => opr.disabled = true);
-        if (!"+-*/%.".includes(key)) {
-            op.forEach(opr => opr.disabled = false);
-        }
-
-    } else if (key === "Enter") {
-        e.preventDefault(); // prevent form submission if any
-        result.innerText = Function('"use strict";return (' + result.innerText + ')')();
-    } else if (key === "Backspace") {
-        result.innerText = result.innerText.slice(0, -1);
-        if (result.innerText === "") result.innerText = "0";
-    } else if (key === "Escape") {
-        result.innerText = "0";
-        op.forEach(opr => opr.disabled = true);
-    }
-});
 
     </script>
 
