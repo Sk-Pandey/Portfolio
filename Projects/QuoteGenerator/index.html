@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quote Generator</title>
-    <link rel="stylesheet" href="src/output.css"">
+    <link rel="stylesheet" href="src/output.css">
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 *{
@@ -50,11 +50,21 @@ button:nth-child(2){
 </style>
 </head>
 <body class="bg-blue-200 h-screen grid place-items-center">
+    
 
     <div id="container" class="bg-white p-4 sm:p-8 rounded-lg w-[300px] md:w-[480px]">
         <h1 class="text-3xl text-center mb-8 relative">Quote of the day</h1>
-        <p id="quote" class="text-center">Loading......</p>
-        <span id="author" class="block mt-2.5 relative float-right">loading....</span>
+
+      <div id="skelton" class="animate-pulse">
+          <div class="h-6 bg-gray-300 rounded mb-4 w-full"></div>
+          <div class="h-4 bg-gray-300 rounded w-1/3 ml-auto"></div>
+      </div>
+
+      <div id="actual-conetnt" class="hidden">
+          <p id="quote" class="text-center">Loading......</p>
+          <span id="author" class="block mt-2.5 relative float-right">loading....</span>
+      </div>
+        
 
         <div id="buttons" class="w-full mt-12 flex justify-center gap-4">
             <button onclick="getQuote(api_url)" class="bg-[rgb(23,124,229)] px-4 py-2 text-white rounded-full">New Quote</button>
@@ -66,21 +76,28 @@ button:nth-child(2){
     <script>
         let quote = document.getElementById("quote");
         let author = document.getElementById("author");
-
+        let skeleton = document.getElementById("skelton");
+        let actual_conetnt = document.getElementById("actual-conetnt");
         const api_url ="https://dummyjson.com/quotes/random";
 
         async function getQuote(url) {
+
+            //show skelton
+            skeleton.classList.remove("hidden");
+            actual_conetnt.classList.add("hidden");
+
+
             const response = await fetch(url);
             var data =await response.json();
             quote.innerText = data.quote;
             author.innerText = data.author;
-
+            
+            //hide skelton and show content
+            skeleton.classList.add("hidden");
+            actual_conetnt.classList.remove("hidden");
         }
 
         getQuote(api_url);
-
-        const newBtn = document.getElementById("new");
-        const tweetBtn = document.getElementById("tweet");
 
         
         function tweet(){
