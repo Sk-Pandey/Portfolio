@@ -20,6 +20,7 @@
         <ol class="list-decimal list-inside mx-auto">
             <li>Enter FontSize in Any Unit</li>
             <li>Enter Color Name/ColorCode</li>
+            <li>In Seond Input Box Enter Color For Back ground</li>
         </ol>
         <button id="ok" class="bg-blue-500 rounded-md text-white py-2 px-8 mt-6 cursor-pointer shadow-md shadow-black">OK</button>
     </div>
@@ -28,6 +29,9 @@
         <h1 id="heading" class="mb-12 text-center text-3xl font-bold">Costomize Me</h1>
         <input id="change" type="text" class="border rounded-md ml-2 pl-4 h-10 caret-blue-600
         text-xl" placeholder="Enter-FontSize/Color">
+        <input id="bg" type="text" class="mt-8 border rounded-md ml-2 pl-4 h-10 caret-blue-600
+        text-xl" placeholder="Enter bg-color">
+        
     </div>
 
 
@@ -35,6 +39,7 @@
         let Instructions = document.getElementById("Instructions");
         let orignal = document.getElementById("orignal");
         let ok = document.getElementById("ok");
+        
 
         ok.addEventListener("click", () => {
     Instructions.classList.remove("scale-100");  // shrink down
@@ -47,13 +52,21 @@
 });
 
 
-        
+        //text change
         let heading = document.getElementById("heading");
         let change = document.getElementById("change");
+
 
         change.addEventListener("input",()=>{
             heading.style.color=change.value;
             heading.style.fontSize=change.value;
+        })
+        //backGround
+        let bg = document.getElementById("bg");
+        let body = document.querySelector("body");
+
+        bg.addEventListener("input",()=>{
+            body.style.backgroundColor=bg.value;
         })
     </script>
 </body>
