@@ -6,21 +6,44 @@
   <title>Awesome Form</title>
   <link rel="stylesheet" href="src/output.css" />
   <style>
-    .move-button {
+    .input-field {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+    .input-field input {
+      border: none;
+      border-bottom: 2px solid gray;
+      padding: 10px 5px 5px 5px;
+      width: 250px;
+      font-size: 1rem;
+      outline: none;
+    }
+    .input-field label {
       position: absolute;
+      left: 5px;
+      top: 10px;
+      color: gray;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+    .input-field input:focus ~ label,
+    .input-field input:not(:placeholder-shown) ~ label {
+      top: -10px;
+      font-size: 0.8rem;
+      color: #2563eb; /* blue-600 */
     }
   </style>
 </head>
 <body class="h-screen grid place-items-center relative overflow-hidden">
 
   <form action="#" class="flex flex-col gap-4 relative" id="form">
-    <div class="flex flex-col">
-      <span class="font-bold text-gray-800">Email:</span>
-      <input class="border border-gray-600 rounded-md px-2 py-1" id="email" type="email" />
+    <div class="input-field">
+      <input id="email" type="email" placeholder=" " required />
+      <label for="email">Email</label>
     </div>
-    <div class="flex flex-col">
-      <span class="font-bold text-gray-800">Password:</span>
-      <input class="border border-gray-600 rounded-md px-2 py-1" type="password" id="password" />
+    <div class="input-field">
+      <input id="password" type="password" placeholder=" " required />
+      <label for="password">Password</label>
     </div>
 
     <button
@@ -46,37 +69,35 @@
 
     btn.addEventListener("mouseover", () => {
       if (email.value.trim() === "" || password.value.trim() === "") {
-        const newX = Math.floor(Math.random() * 300 - 150); // -150 to +150 px
-        const newY = Math.floor(Math.random() * 150 - 75); // -75 to +75 px
+        const newX = Math.floor(Math.random() * 300 - 150);
+        const newY = Math.floor(Math.random() * 150 - 75);
         btn.style.transform = `translate(${newX}px, ${newY}px)`;
-        btn.style.backgroundColor="red";
-        btn.innerText="Fill Detail";
+        btn.style.backgroundColor = "red";
+        btn.innerText = "Fill Detail";
       } else {
         btn.style.transform = "translate(0, 0)";
-        btn.style.backgroundColor="Blue";
-        btn.innerText="Submit";
+        btn.style.backgroundColor = "Blue";
+        btn.innerText = "Submit";
       }
     });
 
     form.addEventListener("submit", (e) => {
       if (email.value.trim() === "" || password.value.trim() === "") {
-        e.preventDefault(); // prevent form submission
+        e.preventDefault();
         alert("Please fill all the fields first!");
       }
     });
-    if(email.value.trim() !== "" && password.value.trim() !== ""){
-      btn.style.transform = "translate(0, 0)";
-    }
-    function checkInputs() {
-    if (email.value.trim() !== "" && password.value.trim() !== "") {
-      btn.style.transform = "translate(0, 0)";
-      btn.style.backgroundColor="Blue";
-        btn.innerText="Submit";
-    }
-  }
 
-  email.addEventListener("input", checkInputs);
-  password.addEventListener("input", checkInputs);
+    function checkInputs() {
+      if (email.value.trim() !== "" && password.value.trim() !== "") {
+        btn.style.transform = "translate(0, 0)";
+        btn.style.backgroundColor = "Blue";
+        btn.innerText = "Submit";
+      }
+    }
+
+    email.addEventListener("input", checkInputs);
+    password.addEventListener("input", checkInputs);
   </script>
 </body>
 </html>

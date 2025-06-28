@@ -2,12 +2,15 @@ let result = document.getElementById("result");
 let oprators = document.querySelectorAll(".op");
 let digit = document.querySelectorAll(".digit");
 let Button = document.querySelectorAll(".btn");
+let decimal = document.getElementById("decimal");
+
 
 //disabling each oprator initially
 let op = Array.from(oprators);
 op.forEach((opr) => {
   opr.disabled = true;
 });
+decimal.disabled=false;
 
 let btns = Array.from(Button);
 btns.forEach((btn) => {
@@ -16,6 +19,7 @@ btns.forEach((btn) => {
       op.forEach((opr) => {
         opr.disabled = true;
       });
+      decimal.disabled=false;
       result.innerText = "";
     }
     if (["%", "/", "*", "-", "+"].includes(e.target.innerText)) {
@@ -23,11 +27,13 @@ btns.forEach((btn) => {
       op.forEach((opr) => {
         opr.disabled = true;
       });
+      decimal.disabled=false;
     } else if (e.target.innerText == "AC") {
       result.innerText = "0";
       op.forEach((opr) => {
         opr.disabled = true;
       });
+      decimal.disabled=false;
     } else if (e.target.innerText == "DEL") {
       result.innerText = result.innerText.slice(0, -1);
       if (result.innerText == "") {
@@ -38,6 +44,7 @@ btns.forEach((btn) => {
       op.forEach((opr) => {
         opr.disabled = false;
       });
+      
     }
   });
 });
