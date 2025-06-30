@@ -18,11 +18,14 @@ btns.forEach((btn) => {
     if (result.innerText == "0") {
       op.forEach((opr) => {
         opr.disabled = true;
-      });
+      }); 
       decimal.disabled=false;
       result.innerText = "";
+    }if(e.target.innerText=="."){
+      result.innerText = result.innerHTML + e.target.innerText;
+      decimal.disabled=true;
     }
-    if (["%", "/", "*", "-", "+"].includes(e.target.innerText)) {
+    else if (["%", "/", "*", "-", "+"].includes(e.target.innerText)) {
       result.innerText = result.innerHTML + e.target.innerText;
       op.forEach((opr) => {
         opr.disabled = true;

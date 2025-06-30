@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="src/output.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Libertinus+Math&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+      * {
+        overflow: hidden;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+      }
+      button {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+  </head>
+  <body class="h-screen bg-gradient-to-r from-[#210f2a] to-[#555033]">
+    <h1
+      id="winnerIs"
+      class="text-3xl text-white font-semibold text-center mt-12"
+    ></h1>
+    <div
+      id="container"
+      class="flex justify-center items-center w-[310px] rounded-md h-[318px] gap-[5px] flex-wrap absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+    >
+      <button
+        id="0"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="1"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="2"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="3"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="4"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="5"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="6"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="7"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+      <button
+        id="8"
+        class="btn active:scale-95 shadow-lg shadow-black rounded-md w-[100px] h-[100px] text-4xl text-[crimson] bg-[#ffe5ec] cursor-pointer"
+      ></button>
+    </div>
+
+    <button
+      id="new"
+      class="hidden shadow-xl shadow-black text-white bg-pink-700 py-3 px-4 rounded-lg cursor-pointer active:transform active:scale-95 absolute bottom-16 left-1/2 transform -translate-1/2"
+    >
+      New Game
+    </button>
+    <script src="script.js"></script>
+  </body>
+</html>
