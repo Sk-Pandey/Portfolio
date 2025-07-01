@@ -61,10 +61,13 @@ function checkWinner() {
     let val2 = buttons[b].innerText;
     let val3 = buttons[c].innerText;
     if (val1 === val2 && val2 === val3 && val1 !== "") {
-      winnerIs.innerText = `${val1 === "O" ? "You" : "Computer"} Won`;
+      winnerIs.innerText = ${val1 === "O" ? "You" : "Computer"} Won;
       buttons.forEach((btn) => {
         btn.disabled = true;
         styleClicked(btn);
+        buttons[a].classList.add("bg-green-600","text-white");
+        buttons[b].classList.add("bg-green-600","text-white");
+        buttons[c].classList.add("bg-green-600","text-white");
       });
       NewGame.classList.remove("hidden");
     }
@@ -83,7 +86,10 @@ NewGame.addEventListener("click", () => {
     btn.classList.add("active:scale-95");
     btn.classList.add("bg-[#ffe5ec]");
     btn.classList.remove("bg-[wheat]");
-    winnerIs.innerText = "";
-    NewGame.classList.add("hidden");
+         btn.classList.remove("bg-green-600","text-white");
+    
   });
+  winnerIs.innerText = "";
+  NewGame.classList.add("hidden");
+  turn=true;
 });
