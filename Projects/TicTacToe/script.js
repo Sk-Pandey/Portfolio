@@ -61,7 +61,7 @@ function checkWinner() {
     let val2 = buttons[b].innerText;
     let val3 = buttons[c].innerText;
     if (val1 === val2 && val2 === val3 && val1 !== "") {
-      winnerIs.innerText = ${val1 === "O" ? "You" : "Computer"} Won;
+      winnerIs.innerText = `${val1 === "O" ? "You" : "Computer"} Won`;
       buttons.forEach((btn) => {
         btn.disabled = true;
         styleClicked(btn);
