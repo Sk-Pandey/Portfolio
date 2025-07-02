@@ -752,6 +752,9 @@
   .overflow-auto {
     overflow: auto;
   }
+  .overflow-scroll {
+    overflow: scroll;
+  }
   .overflow-x-hidden {
     overflow-x: hidden;
   }
