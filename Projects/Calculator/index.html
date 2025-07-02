@@ -5,12 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="src/output.css">
+    <style>
+        #result {
+  overflow: scroll;
+  scrollbar-width: none; /* Firefox */
+}
+
+#result::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+    </style>
 </head>
 <body class="h-screen grid place-items-center bg-gradient-to-r from-[#0f172a]  to-[#334155]">
     
     <section class="bg-gradient-to-b from-[#db2777] via-[#ef4444] to-[#f97316] p-4 w-[330px] rounded-lg">
 
-        <div id="result" class="bg-white p-4 rounded-lg text-3xl text-end font-semibold overflow-scroll">0</div>
+        <div id="result" class="bg-white p-4 rounded-lg text-3xl text-end font-semibold overflow-auto">0</div>
         <div id="buttons" class="mt-4 w-full pl-4 space-y-4">
             <div class="w-full grid grid-cols-4 ">
                 <button class="btn bg-[rgb(36,36,36)] hover:bg-white hover:text-black text-white rounded-lg w-[58px] h-[58px] text-2xl cursor-pointer shadow-lg shadow-black AC">AC</button>
