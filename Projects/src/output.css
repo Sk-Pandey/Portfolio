@@ -1266,6 +1266,9 @@
   .text-justify {
     text-align: justify;
   }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
   .font-serif {
     font-family: var(--font-serif);
   }
