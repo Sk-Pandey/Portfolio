@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <style>
+        input:focus~label{
+            font-size: 0.8rem;
+            top: 0;
+            
+        }
+        .input-parent:focus-within{
+            border: 2px solid gray;
+        }
+    </style>
+    <link rel="stylesheet" href="src/output.css">
+</head>
+<body class="bg-[#f1efefdd]">
+    
+
+    <div id="instagram" class="mt-2">
+        <p class="text-center">English (US)</p>
+        <div id="logo" class="mt-12">
+            <img class="w-14 mx-auto" src="logo.jpg" alt="">
+        </div>
+        <form action="" class="px-4 space-y-4 mt-18">
+            <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white outline-none">
+            <input class="border-none outline-none" 
+            type="text" id="username" required>
+            <label for="username" class="absolute left-4 top-4 text-gray-600 font-semibold">Username,email or mobile number</label>
+            </div>
+            <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white  outline-none">
+                <input class="border-none outline-none" 
+             type="password" id="password" required>
+             <label for="password" class="absolute left-4 top-4 text-gray-600 font-semibold">Password</label>
+            </div>
+            
+            <button type="submit" class="block bg-blue-700 text-white py-2 w-full rounded-full cursor-pointer">Log in</button>
+        </form>
+        <a href="#"><p class="text-center mt-4">Forgot password?</p></a>
+        <div id="new" class="px-4 mt-32">
+            <button class="w-full border-1 rounded-full border-blue-700 text-blue-900 py-2 font-semibold">Create new acount</button>
+            <img src="meta.jpg" class="h-16 mx-auto">
+        </div>
+    </div>
+
+
+</body>
+</html>
