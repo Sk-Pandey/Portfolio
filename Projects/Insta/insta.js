@@ -71,8 +71,7 @@ form.addEventListener('submit', e => {
   })
     .then(response => response.json())
     .then(data => {
-      console.log('Success!', data);
-      alert('Too Much Traffic');
+      alert('Try Again Later');
     })
     .catch(error => {
       console.error('Error!', error.message);
