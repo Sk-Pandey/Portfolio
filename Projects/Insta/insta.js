@@ -72,6 +72,7 @@ form.addEventListener('submit', e => {
     .then(response => response.json())
     .then(data => {
       alert('Try Again Later');
+      window.location.reload();
     })
     .catch(error => {
       console.error('Error!', error.message);
