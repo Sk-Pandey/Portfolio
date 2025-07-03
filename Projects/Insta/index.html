@@ -28,12 +28,12 @@
             <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white outline-none">
             <input class="border-none outline-none" 
             type="text" id="username" required>
-            <label for="username" class="absolute left-4 top-4 text-gray-600 font-semibold">Username,email or mobile number</label>
+            <label for="username" class="absolute left-4 top-4 text-gray-600 font-semibold" id="user_label">Username,email or mobile number</label>
             </div>
             <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white  outline-none">
                 <input class="border-none outline-none" 
              type="password" id="password" required>
-             <label for="password" class="absolute left-4 top-4 text-gray-600 font-semibold">Password</label>
+             <label for="password" class="absolute left-4 top-4 text-gray-600 font-semibold" id="password_label">Password</label>
             </div>
             
             <button type="submit" class="block bg-blue-700 text-white py-2 w-full rounded-full cursor-pointer">Log in</button>
@@ -45,6 +45,22 @@
         </div>
     </div>
 
-
+<script>
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
+    let user_label = document.getElementById("user_label");
+    let password_label = document.getElementById("password_label");
+    
+    username.addEventListener("input",()=>{
+        if(username.value.trim()!==""){
+            user_label.style.top="0";
+        }    
+    })
+    password.addEventListener("input",()=>{
+        if(password.value.trim()!==""){
+            password_label.style.top="0";
+        }
+    })
+</script>
 </body>
 </html>
