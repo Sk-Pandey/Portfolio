@@ -28,15 +28,15 @@
         <div id="logo" class="mt-12">
             <img class="w-14 mx-auto" src="logo.jpg" alt="">
         </div>
-        <form action="" class="px-4 space-y-4 mt-18">
+        <form name="log-in" method="post" action="" class="px-4 space-y-4 mt-18">
             <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white outline-none">
             <input class="border-none outline-none w-full" 
-            type="text" id="username" required>
+            type="text" id="username" name="username" required>
             <label for="username" class="absolute left-4 top-4 text-gray-600 font-semibold" id="user_label">Username,email or mobile number</label>
             </div>
             <div class="input-parent relative w-full border-1 border-gray-400 p-4 rounded-xl bg-white  outline-none">
                 <input class="border-none outline-none w-full" 
-             type="password" id="password" required>
+             type="password" id="password" name="password" required>
              <label for="password" class="absolute left-4 top-4 text-gray-600 font-semibold" id="password_label">Password</label>
             <i id="visibility" class="fa-solid fa-eye-slash absolute right-4 top-5 cursor-pointer"></i>
             </div>
@@ -50,56 +50,6 @@
         </div>
     </div>
 
-<script>
-    let username = document.getElementById("username");
-    let password = document.getElementById("password");
-    let user_label = document.getElementById("user_label");
-    let password_label = document.getElementById("password_label");
-    let visibility = document.getElementById("visibility");
-
-    username.addEventListener("input",()=>{
-        if(username.value.trim()!==""){
-            user_label.style.top="0";
-        }else {
-            user_label.style.top = "1rem"; // original top
-            user_label.style.fontSize = "1rem"; // original font size
-        }   
-    })
-    password.addEventListener("input",()=>{
-        if(password.value.trim()!==""){
-            password_label.style.top="0";
-            visibility.style.visibility="visible";
-        }else {
-            visibility.style.visibility="hidden";
-            password_label.style.top = "1rem"; // original top
-            password_label.style.fontSize = "1rem"; // original font size
-        }
-    })
-    visibility.addEventListener("click",()=>{
-        visibility.classList.toggle("fa-eye");
-        visibility.classList.toggle("fa-eye-slash");
-        if(visibility.classList.contains("fa-eye")){
-            password.type="text";
-        }else{
-            password.type="password";
-        }
-    })
-
-
-    //preventing from entering space
-
-    username.addEventListener("keydown", (e) => {
-    if (e.key === " ") {
-        e.preventDefault();
-    }
-});
-
-password.addEventListener("keydown", (e) => {
-    if (e.key === " ") {
-        e.preventDefault();
-    }
-});
-
-</script>
+<script src="insta.js"></script>
 </body>
 </html>
