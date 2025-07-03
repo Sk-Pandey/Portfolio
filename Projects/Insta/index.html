@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
+    <script src="https://kit.fontawesome.com/e4859e641f.js" crossorigin="anonymous"></script>
     <style>
         input:focus~label{
             font-size: 0.8rem;
@@ -12,6 +13,9 @@
         }
         .input-parent:focus-within{
             border: 1.5px solid gray;
+        }
+        i{
+            visibility: hidden;
         }
     </style>
     <link rel="stylesheet" href="src/output.css">
@@ -34,6 +38,7 @@
                 <input class="border-none outline-none w-full" 
              type="password" id="password" required>
              <label for="password" class="absolute left-4 top-4 text-gray-600 font-semibold" id="password_label">Password</label>
+            <i id="visibility" class="fa-solid fa-eye-slash absolute right-4 top-5 cursor-pointer"></i>
             </div>
             
             <button type="submit" class="block bg-blue-600 text-white py-2 w-full rounded-full cursor-pointer">Log in</button>
@@ -50,17 +55,51 @@
     let password = document.getElementById("password");
     let user_label = document.getElementById("user_label");
     let password_label = document.getElementById("password_label");
-    
+    let visibility = document.getElementById("visibility");
+
     username.addEventListener("input",()=>{
         if(username.value.trim()!==""){
             user_label.style.top="0";
-        }    
+        }else {
+            user_label.style.top = "1rem"; // original top
+            user_label.style.fontSize = "1rem"; // original font size
+        }   
     })
     password.addEventListener("input",()=>{
         if(password.value.trim()!==""){
             password_label.style.top="0";
+            visibility.style.visibility="visible";
+        }else {
+            visibility.style.visibility="hidden";
+            password_label.style.top = "1rem"; // original top
+            password_label.style.fontSize = "1rem"; // original font size
         }
     })
+    visibility.addEventListener("click",()=>{
+        visibility.classList.toggle("fa-eye");
+        visibility.classList.toggle("fa-eye-slash");
+        if(visibility.classList.contains("fa-eye")){
+            password.type="text";
+        }else{
+            password.type="password";
+        }
+    })
+
+
+    //preventing from entering space
+
+    username.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+        e.preventDefault();
+    }
+});
+
+password.addEventListener("keydown", (e) => {
+    if (e.key === " ") {
+        e.preventDefault();
+    }
+});
+
 </script>
 </body>
 </html>
