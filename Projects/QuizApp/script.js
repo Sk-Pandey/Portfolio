@@ -1,4 +1,4 @@
-let name = prompt("What is Your Name");
+let name = prompt("What is Your Name") ?? "User";
 const questions = [
     {
         question: "If 1st January is Sunday, what day will be on 1st March (non-leap year)?",
