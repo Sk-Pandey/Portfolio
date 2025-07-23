@@ -1,208 +1,169 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./src/output.css" rel="stylesheet" />
-    <title>Portfolio</title>
+    <title>Shashikant Pandey - Portfolio</title>
+    <link rel="stylesheet" href="src/output.css">
     <link
       rel="shortcut icon"
       href="https://img.icons8.com/?size=100&id=115648&format=png&color=000000"
       type="image/x-icon"
     />
-  </head>
-  <body
-    class="max-w-screen bg-gradient-to-r from-slate-900 to-slate-700 text-white sm:px-12"
-  > 
-    <!-- HEADER START HERE -->
+    <style>
+        /* Custom font import - Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Primary Background Color: Deep Charcoal */
+            background-color: #1A202C;
+            color: #F8FAFC; /* Off-White for primary text */
+            line-height: 1.6;
+            /* Ensure full height for sticky footer */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2D3748; /* Secondary Background */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #06B6D4; /* Primary Accent Color */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0EA5E9; /* Slightly lighter accent on hover */
+        }
+
+        /* For the gradient text effect, we need to apply the gradient to the background
+            and then clip the text. This requires a bit of custom CSS as Tailwind's
+            bg-clip-text works best with utility classes. */
+        .text-gradient-accent {
+            background: linear-gradient(to right, #06B6D4, #3B82F6); /* Teal to Royal Blue */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; /* Fallback for non-webkit browsers */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
     <header
-      class="z-50 flex items-center justify-around bg-gradient-to-r from-neutral-600 to-stone-800 mx-auto py-4 px-6 rounded-b-md text-[#ffffff] font-bold sticky top-0"
+        class="z-50 flex flex-col sm:flex-row items-center justify-between bg-[#2D3748] shadow-lg mx-auto py-4 px-6 md:px-12 rounded-b-lg text-[#F8FAFC] font-semibold sticky top-0 w-full"
     >
-      <ul id="nav" class="flex gap-6 flex-wrap">
-        <li class="hover:text-blue-400 hover:cursor-pointer">Home</li>
-        <a href="/Portfolio/Projects/index.html"
-          ><li class="hover:text-blue-400 hover:cursor-pointer">Projects</li></a
-        >
-        <li class="hover:text-blue-400 hover:cursor-pointer">About</li>
-        <li class="hover:text-blue-400 hover:cursor-pointer">Contact</li>
-      </ul>
-      <ul id="social" class="sm:flex gap-4 hidden">
-        <a href="https://www.linkedin.com/in/shashikant-pandey-aa9719372?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDQWJF8OAR1KDgCE3WrrECw%3D%3D"><li class="hover:scale-110 hover:text-white hover:cursor-pointer">
-          <img
-            class="w-[36px] h-[36px]"
-            src="https://img.icons8.com/?size=100&id=44019&format=png&color=000000"
-            alt=""
-          />
-        </li></a>
-        <li class="hover:scale-110 hover:text-white hover:cursor-pointer">
-          <img
-            class="w-[36px] h-[36px]"
-            src="https://img.icons8.com/?size=100&id=bG29Ckcdp6YP&format=png&color=000000"
-            alt=""
-          />
-        </li>
-        <a href="https://www.instagram.com/skpandeyyy/"
-          ><li class="hover:scale-110 hover:text-white hover:cursor-pointer">
-            <img
-              class="w-[36px] h-[36px]"
-              src="https://img.icons8.com/?size=100&id=43625&format=png&color=000000"
-              alt=""
-            /></li
-        ></a>
-        <a href="https://github.com/Sk-Pandey"
-          ><li class="hover:scale-110 hover:text-white hover:cursor-pointer">
-            <img
-              class="w-[36px] h-[36px]"
-              src="https://img.icons8.com/?size=100&id=52539&format=png&color=000000"
-              alt=""
-            /></li
-        ></a>
-      </ul>
+        <div class="text-2xl font-bold mb-4 sm:mb-0">
+            <a href="#" class="hover:text-[#06B6D4] transition-colors duration-300">Shashikant Pandey</a>
+        </div>
+
+        <ul id="nav" class="flex gap-6 flex-wrap justify-center mb-4 sm:mb-0">
+            <li><a href="#" class="text-[#CBD5E1] hover:text-[#06B6D4] transition-colors duration-300">Home</a></li>
+            <li><a href="/Portfolio/Projects/index.html" class="text-[#CBD5E1] hover:text-[#06B6D4] transition-colors duration-300">Projects</a></li>
+            <li><a href="#" class="text-[#CBD5E1] hover:text-[#06B6D4] transition-colors duration-300">About</a></li>
+            <li><a href="#" class="text-[#CBD5E1] hover:text-[#06B6D4] transition-colors duration-300">Contact</a></li>
+        </ul>
+
+        <ul id="social" class="flex gap-4">
+            <li>
+                <a href="https://www.linkedin.com/in/shashikant-pandey-aa9719372?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BDQWJF8OAR1KDgCE3WrrECw%3D%3D" target="_blank" class="block hover:scale-110 transition-transform duration-300">
+                    <img class="w-[36px] h-[36px] rounded-full shadow-md" src="https://img.icons8.com/?size=100&id=44019&format=png&color=000000" alt="LinkedIn" />
+                </a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/skpandeyyy/" target="_blank" class="block hover:scale-110 transition-transform duration-300">
+                    <img class="w-[36px] h-[36px] rounded-full shadow-md" src="https://img.icons8.com/?size=100&id=43625&format=png&color=000000" alt="Instagram" />
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/Sk-Pandey" target="_blank" class="block hover:scale-110 transition-transform duration-300">
+                    <img class="w-[36px] h-[36px] rounded-full shadow-md" src="https://img.icons8.com/?size=100&id=52539&format=png&color=000000" alt="GitHub" />
+                </a>
+            </li>
+            </ul>
     </header>
-    <!-- HEADER END HERE -->
 
-    <!-- MAIN START HERE -->
+
+    <div class="mx-auto">
     <main
-      class="p-12 lg:pt-16 lg:pb-4 lg:px-80 flex flex-col-reverse sm:flex-row gap-12"
+        class="flex-grow container mx-auto px-6 md:px-12 py-16 text-center md:flex md:items-center md:justify-center md:text-left flex-col-reverse sm:flex-row md:gap-12"
     >
-      <div id="detail" class="space-y-6">
-        <h1
-          id="name"
-          class="lg:text-4xl md:text-3xl text-2xl font-extrabold bg-gradient-to-l from-indigo-500 via-red-500 to-blue-500 text-transparent bg-clip-text"
-        >
-          Shashikant Pandey
-        </h1>
-        <p
-          id="discrip"
-          class="sm:font-bold text-justify max-w-md bg-gradient-to-t from-green-500 via-red-500 to-blue-500 text-transparent bg-clip-text font-serif"
-        >
-          Hi, Myself Shashikant Pandey Btech first year student at SAGE
-          UNIVERSITY INDORE.
-        </p>
-        <a href="/Portfolio/Projects/index.html" target="_blank">
-        <button
-          class="py-2 px-6 bg-gradient-to-r from-[#03ff03] via-[#25ab25] to-[#2bfa2b] rounded font-semibold animate-bounce hover:animate-none shadow-[0px_0px_8px_rgb(0,255,0)] hover:cursor-pointer mt-8"
-        >
-          Check Projects
-        </button></a>
-      </div>
-      <img
-        class="mx-auto sm:mx-0 rounded-full w-[200px] h-[200px]"
-        src="https://i.ibb.co/20w6401X/Profile.jpg" alt="Profile"
-        alt="Whats-App-Image-2024-11-05-at-13-18-41-e911d7a0"
-        alt=""
-      />
+        <div id="detail" class="space-y-6 md:w-1/2 md:pr-8 mb-12 sm:mb-0"> <h1
+                id="name"
+                class="text-5xl md:text-6xl font-extrabold text-gradient-accent leading-tight mb-4"
+            >
+                Shashikant Pandey
+            </h1>
+            <p
+                id="discrip"
+                class="text-xl md:text-2xl text-[#CBD5E1] text-justify max-w-md mx-auto md:mx-0"
+            >
+                Hi, Myself Shashikant Pandey Btech first year student at <span class="text-[#06B6D4] font-semibold">SAGE UNIVERSITY INDORE</span>.
+            </p>
+            <a href="/Portfolio/Projects/index.html" target="_blank">
+                <button
+                    class="inline-block bg-[#06B6D4] text-[#F8FAFC] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#0EA5E9] transition-all duration-300 transform hover:scale-105 mt-8 animate-bounce hover:animate-none cursor-pointer"
+                >
+                    Check Projects
+                </button>
+            </a>
+        </div>
+        <div class="md:w-1/2 flex justify-center md:justify-start">
+            <img
+                class="w-60 h-60 md:w-72 md:h-72 object-cover rounded-full border-4 border-[#06B6D4] shadow-xl"
+                src="https://i.ibb.co/20w6401X/Profile.jpg"
+                alt="Shashikant Pandey Profile"
+            />
+        </div>
     </main>
-    <!-- MAIN ENDS HERE -->
-
-    <!-- Footer Section start here -->
-    <h1
-      class="text-center lg:text-4xl md:text-3xl text-2xl font-extrabold bg-gradient-to-l from-indigo-500 via-red-500 to-blue-500 text-transparent bg-clip-text"
-    >
-      MY SKILL'S
-    </h1>
-    <div id="footer" class="p-12 lg:py-12 lg:px-48">
-      <ul
-        class="flex justify-between items-center gap-4 lg:gap-x-36 lg:gap-y-18 flex-wrap py-1 max-w-screen"
-      >
-        <li
-          class="hover:scale-105 hover:cursor-pointer min-w-10/12 sm:min-w-[158px] mx-auto px-4 py-2 rounded flex items-center gap-2 bg-gradient-to-t from-green-500 via-red-500 to-blue-500 text-transparent bg-clip-text"
-        >
-          <img
-            class="w-[40px] h-[40px]"
-            src="https://cdn0.iconfinder.com/data/icons/social-media-2183/512/social__media__social_media__html_5_-512.png"
-            alt=""
-          />
-          <strong>Html</strong>
-        </li>
-        <li
-          class="hover:scale-105 hover:cursor-pointer min-w-10/12 sm:min-w-[158px] mx-auto px-4 py-2 rounded flex items-center gap-2 bg-gradient-to-r from-purple-500 via-teal-500 to-red-500 text-transparent bg-clip-text"
-        >
-          <img
-            class="w-[40px] h-[40px]"
-            src="https://img.icons8.com/?size=100&id=5cVdiiKKi0vX&format=png&color=000000"
-            alt=""
-          />
-          <strong>CSS</strong>
-        </li>
-        <li
-          class="hover:scale-105 hover:cursor-pointer min-w-10/12 sm:min-w-[158px] mx-auto px-4 py-2 rounded flex items-center gap-2 bg-gradient-to-r from-purple-500 via-teal-500 to-red-500 text-transparent bg-clip-text"
-        >
-          <img
-            class="w-[40px] h-[40px]"
-            src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000"
-            alt=""
-          />
-          <strong>JavaScript</strong>
-        </li>
-        <li
-          class="hover:scale-105 hover:cursor-pointer min-w-10/12 sm:min-w-[158px] mx-auto px-4 py-2 rounded flex items-center gap-2 bg-gradient-to-t from-blue-500 via-yellow-500 to-teal-500 text-transparent bg-clip-text"
-        >
-          <img
-            class="w-[40px] h-[40px]"
-            src="https://img.icons8.com/?size=100&id=FnnFuAIw4e8j&format=png&color=000000"
-            alt=""
-          />
-          <strong>Tailwind</strong>
-        </li>
-        <li
-          class="hover:scale-105 hover:cursor-pointer min-w-10/12 sm:min-w-[158px] mx-auto px-4 py-2 rounded flex items-center gap-2 bg-gradient-to-t from-green-500 via-red-500 to-blue-500 text-transparent bg-clip-text"
-        >
-          <img
-            class="w-[40px] h-[40px]"
-            src="https://img.icons8.com/?size=100&id=lTKW3iI3wIT0&format=png&color=000000"
-            alt=""
-          />
-          <strong>Java</strong>
-        </li>
-        <li
-          class="hover:scale-105 hover:cursor-pointer min-w-10/12 sm:min-w-[158px] mx-auto px-4 py-2 rounded flex items-center gap-2 bg-gradient-to-r from-yellow-500 via-red-500 to-pink-500 text-transparent bg-clip-text"
-        >
-          <img
-            class="w-[40px] h-[40px]"
-            src="https://img.icons8.com/?size=100&id=pIJdjOoL6KfU&format=png&color=000000"
-            alt=""
-          />
-          <strong>Python</strong>
-        </li>
-      </ul>
-      <ul id="social" class="flex justify-between sm:hidden pt-12">
-        <li class="hover:scale-110 hover:cursor-pointer">
-          <img
-            class="w-[36px] h-[36px]"
-            src="https://img.icons8.com/?size=100&id=44019&format=png&color=000000"
-            alt=""
-          />
-        </li>
-        <li class="hover:scale-110 hover:cursor-pointer">
-          <img
-            class="w-[36px] h-[36px]"
-            src="https://img.icons8.com/?size=100&id=bG29Ckcdp6YP&format=png&color=000000"
-            alt=""
-          />
-        </li>
-        <a href="https://www.instagram.com/skpandeyyy/">
-          <li class="hover:scale-110 hover:cursor-pointer">
-            <img
-              class="w-[36px] h-[36px]"
-              src="https://img.icons8.com/?size=100&id=43625&format=png&color=000000"
-              alt=""
-            />
-          </li>
-        </a>
-
-        <a href="https://github.com/Sk-Pandey">
-          <li class="hover:scale-110 hover:cursor-pointer">
-            <img
-              class="w-[36px] h-[36px]"
-              src="https://img.icons8.com/?size=100&id=52539&format=png&color=000000"
-              alt=""
-            />
-          </li>
-        </a>
-      </ul>
     </div>
 
-    <!-- Footer Section Ends here -->
-  </body>
+
+    <section class="container mx-auto px-6 md:px-12 py-16">
+        <h2 class="text-4xl font-bold text-[#F8FAFC] text-center mb-12">
+            MY SKILL'S
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-[#2D3748] p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <img src="https://cdn0.iconfinder.com/data/icons/social-media-2183/512/social__media__social_media__html_5_-512.png" alt="HTML Icon" class="w-16 h-16 mb-4">
+                <h3 class="text-2xl font-semibold text-[#CBD5E1]">HTML</h3>
+            </div>
+
+            <div class="bg-[#2D3748] p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <img src="https://img.icons8.com/?size=100&id=5cVdiiKKi0vX&format=png&color=000000" alt="CSS Icon" class="w-16 h-16 mb-4">
+                <h3 class="text-2xl font-semibold text-[#CBD5E1]">CSS</h3>
+            </div>
+
+            <div class="bg-[#2D3748] p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <img src="https://img.icons8.com/?size=100&id=108784&format=png&color=000000" alt="JavaScript Icon" class="w-16 h-16 mb-4">
+                <h3 class="text-2xl font-semibold text-[#CBD5E1]">JavaScript</h3>
+            </div>
+
+            <div class="bg-[#2D3748] p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <img src="https://img.icons8.com/?size=100&id=FnnFuAIw4e8j&format=png&color=000000" alt="Tailwind Icon" class="w-16 h-16 mb-4">
+                <h3 class="text-2xl font-semibold text-[#CBD5E1]">Tailwind</h3>
+            </div>
+
+            <div class="bg-[#2D3748] p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <img src="https://img.icons8.com/?size=100&id=lTKW3iI3wIT0&format=png&color=000000" alt="Java Icon" class="w-16 h-16 mb-4">
+                <h3 class="text-2xl font-semibold text-[#CBD5E1]">Java</h3>
+            </div>
+
+            <div class="bg-[#2D3748] p-6 rounded-xl shadow-lg flex flex-col items-center text-center transform hover:scale-105 transition-transform duration-300">
+                <img src="https://img.icons8.com/?size=100&id=pIJdjOoL6KfU&format=png&color=000000" alt="Python Icon" class="w-16 h-16 mb-4">
+                <h3 class="text-2xl font-semibold text-[#CBD5E1]">Python</h3>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-[#2D3748] py-8 px-6 md:px-12 text-center text-[#CBD5E1] rounded-t-lg mt-auto">
+        <p>&copy; 2025 Shashikant Pandey. All rights reserved.</p>
+        <p class="mt-2">Designed with <span class="text-red-500">&hearts;</span> and Code.</p>
+    </footer>
+    </body>
 </html>
