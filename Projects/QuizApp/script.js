@@ -110,7 +110,7 @@ function startQuiz(){
 
 function showQuestion(){
     resetState();
-    // to show Question
+    // to show Question 
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex+1;
     questionElement.innerHTML= questionNo +". "+currentQuestion.question;
